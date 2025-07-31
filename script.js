@@ -1,5 +1,11 @@
 document.getElementById("searchButton").addEventListener("click", fetchMovies);
 
+document.getElementById("searchInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        fetchMovies();
+    }
+});
+
 function fetchMovies() {
     const movieName = document.getElementById("searchInput").value.trim();
     if (movieName === "") {
